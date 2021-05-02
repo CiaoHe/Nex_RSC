@@ -39,6 +39,7 @@ def get_args():
     parser.add_argument("--tile_random_grayscale", default=0.1, type=float, help="Chance of randomly greyscaling a tile")
     #criterion
     parser.add_argument("--loss", default='ce', type=str, help="loss function")
+    parser.add_argument("--save_metric", default="AUC", type=str, help="Metric of saving best model (AUC/FPR)")
     #
     parser.add_argument("--limit_source", default=None, type=int,
                         help="If set, it will limit the number of training samples")
@@ -82,9 +83,9 @@ class Trainer:
         self.model = model.to(device)
         
         if args.resume:
-            if isfile(args.resume):
+            if isfile(join(_save_models_dir, args.resume)):
                 print(f"=> loading checkpoint '{args.resume}'")
-                checkpoint = torch.load(args.resume)
+                checkpoint = torch.load(join(_save_models_dir, args.resume))
                 self.args.start_epoch = checkpoint['epoch']
                 self.model.load_state_dict(checkpoint['model'])
                 print(f"=> loaded checkpoint '{args.resume}' (epoch {checkpoint['epoch']})")
@@ -107,6 +108,7 @@ class Trainer:
         else:
             self.target_id = None
         self.topk = [0 for _ in range(3)]
+        self.topfpr = [100.0 for _ in range(3)]
 
     def _do_epoch(self, epoch=None):
         if self.args.loss == 'ce':
@@ -187,61 +189,43 @@ class Trainer:
         self.logger.save_best(test_res[idx_best], test_res.max())
         return self.logger, self.model
 
-    # def save_model(self,epoch, auc_dict):
-    #     if not exists(_save_models_dir): os.mkdir(_save_models_dir)
-    #     state_to_save = {'model':self.model.state_dict(), 'auc_dict':auc_dict, 'epoch':epoch}
-    #     tmp_auc, tmp_fpr_980 = auc_dict['auc'], auc_dict['fpr_980']
-    #     best1,best2,best3 = self.moving_record['best1'],self.moving_record['best2'],self.moving_record['best3']
-    #     best1_path, best2_path, best3_path = (join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{_}.pth") for _ in [1,2,3])
-    #     #resort top3
-    #     update_pos = -1
-    #     if tmp_auc>best1['auc']:
-    #         best3['auc'], best3['fpr_980'] = best2['auc'], best2['fpr_980']
-    #         best2['auc'], best2['fpr_980'] = best1['auc'], best1['fpr_980']
-    #         best1['auc'], best1['fpr_980'] = tmp_auc, tmp_fpr_980
-    #         if exists(best2_path) and exists(best3_path):
-    #             os.rename(best2_path, best3_path)
-    #         if exists(best1_path) and exists(best2_path):
-    #             os.rename(best1_path, best2_path)
-    #         update_pos = 1
-    #     elif best2['auc']< tmp_auc < best1['auc']:
-    #         best3['auc'], best3['fpr_980'] = best2['auc'], best2['fpr_980']
-    #         best2['auc'], best2['fpr_980'] = tmp_auc, tmp_fpr_980
-    #         if exists(best2_path) and exists(best3_path):
-    #             os.rename(best2_path, best3_path)
-    #         update_pos = 2
-    #     elif best3['auc']< tmp_auc < best2['auc']:
-    #         best3['auc'], best3['fpr_980'] = tmp_auc, tmp_fpr_980
-    #         update_pos = 3
-        
-    #     if update_pos in [1,2,3]:
-    #         model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{update_pos}.pth")
-    #         torch.save(state_to_save, model_saved_path)
-    #         print(f'=>Best{update_pos} model updated and saved in path {model_saved_path}')
-    #     if epoch in range(self.args.epochs-3, self.args.epochs):
-    #         model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_epochs{epoch}.pth")
-    #         torch.save(state_to_save, model_saved_path)
-    #         print(f'=>Last{self.args.epochs - epoch} model updated and saved in path {model_saved_path}')
     def save_model(self,epoch,auc_dict):
         if not exists(_save_models_dir): os.mkdir(_save_models_dir)
         tmp_auc, tmp_fpr_980 = auc_dict['auc'], auc_dict['fpr_980']
-        for i,rec in enumerate(self.topk):
-            if tmp_auc > rec:
-                for j in range(len(self.topk)-1,i,-1):
-                    self.topk[j] = self.topk[j-1]
-                    _j, _jm1 = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j+1}.pth"),\
-                    join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j}.pth")
-                    if exists(_jm1):
-                        os.rename(_jm1,_j)
-                self.topk[i] = tmp_auc
-                model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{i+1}.pth")
-                state_to_save = {'model':self.model.state_dict(), 'auc_dict':auc_dict, 'epoch':epoch}
-                torch.save(state_to_save, model_saved_path)
-                print(f'=>Best{i+1} model updated and saved in path {model_saved_path}')
-                break
+        if self.args.save_metric == 'AUC':
+            for i,rec in enumerate(self.topk):
+                if tmp_auc > rec:
+                    for j in range(len(self.topk)-1,i,-1):
+                        self.topk[j] = self.topk[j-1]
+                        _j, _jm1 = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j+1}.pth"),\
+                        join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j}.pth")
+                        if exists(_jm1):
+                            os.rename(_jm1,_j)
+                    self.topk[i] = tmp_auc
+                    model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{i+1}_{self.args.save_metric}.pth")
+                    state_to_save = {'model':self.model.state_dict(), 'auc_dict':auc_dict, 'epoch':epoch}
+                    torch.save(state_to_save, model_saved_path)
+                    print(f'=>Best{i+1} model updated and saved in path {model_saved_path}')
+                    break
+        elif self.args.save_metric == 'FPR':
+            for i,rec in enumerate(self.topfpr):
+                if tmp_fpr_980 < rec:
+                    for j in range(len(self.topfpr)-1,i,-1):
+                        self.topfpr[j] = self.topfpr[j-1]
+                        _j, _jm1 = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j+1}.pth"),\
+                        join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{j}.pth")
+                        if exists(_jm1):
+                            os.rename(_jm1,_j)
+                    self.topfpr[i] = tmp_fpr_980
+                    model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_best{i+1}_{self.args.save_metric}.pth")
+                    state_to_save = {'model':self.model.state_dict(), 'auc_dict':auc_dict, 'epoch':epoch}
+                    torch.save(state_to_save, model_saved_path)
+                    print(f'=>Best{i+1} model updated and saved in path {model_saved_path}')
+                    break
 
         if epoch in range(self.args.epochs-3, self.args.epochs):
-            model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_epochs{epoch}.pth")
+            model_saved_path = join(_save_models_dir, f"tgt_{self.args.target}_src_{'-'.join(self.args.source)}_RSC_{self.args.RSC_flag}_last{self.args.epochs-epoch}_{self.args.save_metric}.pth")
+            state_to_save = {'model':self.model.state_dict(), 'auc_dict':auc_dict, 'epoch':epoch}
             torch.save(state_to_save, model_saved_path)
             print(f'=>Last{self.args.epochs - epoch} model updated and saved in path {model_saved_path}')
 

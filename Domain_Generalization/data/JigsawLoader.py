@@ -20,6 +20,8 @@ relabel_dict = {
             9:1,
         }
 
+DEFAULT_PASS_IMG_PATH = join('/import/home/share/from_Nexperia_April2021/Jan2021','Pass/20210120_WEPA0144514A_11_1_268_3.bmp')
+
 def get_random_subset(names, labels, percent):
     """
 
@@ -40,7 +42,7 @@ def get_random_subset(names, labels, percent):
 def _dataset_info(txt_labels): 
     ''' 
     file_names:List, labels:List 
-   ''' 
+    ''' 
     with open(txt_labels, 'r') as f: 
         images_list = f.readlines() 
 
@@ -259,8 +261,11 @@ class JigsawTestNewDataset(JigsawNewDataset):
 
     def __getitem__(self, index):
         framename = self.data_path + '/' + self.names[index]
-        img = Image.open(framename).convert('RGB')
-        return self._image_transformer(img), 0, int(self.labels[index]-1)
+        try:
+            img = Image.open(framename).convert('RGB')
+        except OSError:
+            img = Image.open(DEFAULT_PASS_IMG_PATH).convert('RGB')
+        return self._image_transformer(img), 0, int(self.labels[index] - 1)
 
 # class JigsawTestNewMonthDataset(JigsawNewDataset):
 #     def __init__(self, *args, **xargs):

@@ -44,7 +44,6 @@ dataset_mean = {mnist: (0.13909429, 0.13909429, 0.13909429),
                 nex: (0.1407, 0.1407, 0.1407),
                 }
 
-
 class Subset(torch.utils.data.Dataset):
     def __init__(self, dataset, limit):
         indices = torch.randperm(len(dataset))[:limit]

@@ -1,15 +1,16 @@
 ARCH=resnet50
 SRC=Nex_trainingset
-TGT=Jan2021
+TGT=Mar2021
 CLS_NUM=9
 EPOCH=200
 BATCH_SIZE=32
+SAVE_METRIC=AUC
 
 LOSS=fl
 PRETRAINED=True
 RSC=True
 
-GPU=1
+GPU=5
 
 mkdir -p Domain_Generalization/explog
 LOG_PATH=Domain_Generalization/explog
@@ -26,5 +27,5 @@ python -u /home/hcaoaf/github/RSC/Domain_Generalization/train.py \
        --network ${ARCH} \
        --RSC_flag \
        --loss fl \
-       >>${LOG_PATH}/${TGT}_BASED_ON_${SRC}_RSC_${RSC}_epochs${EPOCH}_${ARCH}_Pretrained_${PRETRAINED}_loss_${LOSS}.log
-
+       --save_metric ${SAVE_METRIC} \
+       >>${LOG_PATH}/${TGT}_BASED_ON_${SRC}_RSC_${RSC}_epochs${EPOCH}_${ARCH}_Pretrained_${PRETRAINED}_loss_${LOSS}_${SAVE_METRIC}.log
