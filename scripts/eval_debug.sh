@@ -1,6 +1,6 @@
 BACKBONE=resnet50
 
-for TGT in {Jul,Augu,Sep,Oct,Nov,Dec,Jan2021,Feb2021,Mar2021,batch_2,batch_3}
+for TGT in {Jan2021,}
 do
     for best in {1,2,3,}
     do
@@ -13,7 +13,7 @@ do
             --cuda_number 2 \
             --target ${TGT}\
             --network ${BACKBONE} \
-            --infer_model ./Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best${best}_AUC.pth
+            --infer_model ./Domain_Generalization/save_models/tgt_batch_2_src_Nex_trainingset_RSC_True_best${best}_AUC.pth
     done
 
     for last in {1,2,3,}
@@ -27,6 +27,7 @@ do
              --cuda_number 2 \
              --target ${TGT}\
              --network ${BACKBONE} \
-             --infer_model ./Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last${last}_AUC.pth
+             --infer_model ./Domain_Generalization/save_models/tgt_batch_2_src_Nex_trainingset_RSC_True_last${last}_AUC.pth
      done
  done
+

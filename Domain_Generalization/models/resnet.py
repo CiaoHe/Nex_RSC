@@ -10,6 +10,7 @@ import torch.nn.functional as F
 import random
 import math
 
+
 class ResNet(nn.Module):
     def __init__(self, block, layers, jigsaw_classes=1000, classes=100):
         self.inplanes = 64
@@ -31,7 +32,8 @@ class ResNet(nn.Module):
 
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                nn.init.kaiming_normal_(
+                    m.weight, mode='fan_out', nonlinearity='relu')
             elif isinstance(m, nn.BatchNorm2d):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
@@ -70,7 +72,7 @@ class ResNet(nn.Module):
         if flag:
             interval = 10
             if epoch % interval == 0:
-                if epoch<40:
+                if epoch < 40:
                     self.pecent = 3.0 / 10 + (epoch / interval) * 2.0 / 10
 
             self.eval()
@@ -91,15 +93,18 @@ class ResNet(nn.Module):
             sp_i[0, :] = torch.arange(num_rois)
             sp_i[1, :] = index
             sp_v = torch.ones([num_rois])
-            one_hot_sparse = torch.sparse.FloatTensor(sp_i, sp_v, torch.Size([num_rois, class_num])).to_dense().cuda()
+            one_hot_sparse = torch.sparse.FloatTensor(
+                sp_i, sp_v, torch.Size([num_rois, class_num])).to_dense().cuda()
             one_hot_sparse = Variable(one_hot_sparse, requires_grad=False)
             one_hot = torch.sum(output * one_hot_sparse)
             self.zero_grad()
             one_hot.backward()
             grads_val = x_new.grad.clone().detach()
-            grad_channel_mean = torch.mean(grads_val.view(num_rois, num_channel, -1), dim=2)
+            grad_channel_mean = torch.mean(
+                grads_val.view(num_rois, num_channel, -1), dim=2)
             channel_mean = grad_channel_mean
-            grad_channel_mean = grad_channel_mean.view(num_rois, num_channel, 1, 1)
+            grad_channel_mean = grad_channel_mean.view(
+                num_rois, num_channel, 1, 1)
             spatial_mean = torch.sum(x_new * grad_channel_mean, 1)
             spatial_mean = spatial_mean.view(num_rois, HW)
             self.zero_grad()
@@ -108,16 +113,21 @@ class ResNet(nn.Module):
             if choose_one <= 4:
                 # ---------------------------- spatial -----------------------
                 spatial_drop_num = math.ceil(HW * 1 / 3.0)
-                th18_mask_value = torch.sort(spatial_mean, dim=1, descending=True)[0][:, spatial_drop_num]
-                th18_mask_value = th18_mask_value.view(num_rois, 1).expand(num_rois, 49)
+                th18_mask_value = torch.sort(spatial_mean, dim=1, descending=True)[
+                    0][:, spatial_drop_num]
+                th18_mask_value = th18_mask_value.view(
+                    num_rois, 1).expand(num_rois, 49)
                 mask_all_cuda = torch.where(spatial_mean > th18_mask_value, torch.zeros(spatial_mean.shape).cuda(),
                                             torch.ones(spatial_mean.shape).cuda())
-                mask_all = mask_all_cuda.reshape(num_rois, H, H).view(num_rois, 1, H, H)
+                mask_all = mask_all_cuda.reshape(
+                    num_rois, H, H).view(num_rois, 1, H, H)
             else:
                 # -------------------------- channel ----------------------------
                 vector_thresh_percent = math.ceil(num_channel * 1 / 3.2)
-                vector_thresh_value = torch.sort(channel_mean, dim=1, descending=True)[0][:, vector_thresh_percent]
-                vector_thresh_value = vector_thresh_value.view(num_rois, 1).expand(num_rois, num_channel)
+                vector_thresh_value = torch.sort(channel_mean, dim=1, descending=True)[
+                    0][:, vector_thresh_percent]
+                vector_thresh_value = vector_thresh_value.view(
+                    num_rois, 1).expand(num_rois, num_channel)
                 vector = torch.where(channel_mean > vector_thresh_value,
                                      torch.zeros(channel_mean.shape).cuda(),
                                      torch.ones(channel_mean.shape).cuda())
@@ -127,7 +137,8 @@ class ResNet(nn.Module):
             cls_prob_before = F.softmax(output, dim=1)
             x_new_view_after = x_new * mask_all
             x_new_view_after = self.avgpool(x_new_view_after)
-            x_new_view_after = x_new_view_after.view(x_new_view_after.size(0), -1)
+            x_new_view_after = x_new_view_after.view(
+                x_new_view_after.size(0), -1)
             x_new_view_after = self.class_classifier(x_new_view_after)
             cls_prob_after = F.softmax(x_new_view_after, dim=1)
 
@@ -135,12 +146,15 @@ class ResNet(nn.Module):
             sp_i[0, :] = torch.arange(num_rois)
             sp_i[1, :] = index
             sp_v = torch.ones([num_rois])
-            one_hot_sparse = torch.sparse.FloatTensor(sp_i, sp_v, torch.Size([num_rois, class_num])).to_dense().cuda()
+            one_hot_sparse = torch.sparse.FloatTensor(
+                sp_i, sp_v, torch.Size([num_rois, class_num])).to_dense().cuda()
             before_vector = torch.sum(one_hot_sparse * cls_prob_before, dim=1)
             after_vector = torch.sum(one_hot_sparse * cls_prob_after, dim=1)
             change_vector = before_vector - after_vector - 0.0001
-            change_vector = torch.where(change_vector > 0, change_vector, torch.zeros(change_vector.shape).cuda())
-            th_fg_value = torch.sort(change_vector, dim=0, descending=True)[0][int(round(float(num_rois) * self.pecent))]
+            change_vector = torch.where(
+                change_vector > 0, change_vector, torch.zeros(change_vector.shape).cuda())
+            th_fg_value = torch.sort(change_vector, dim=0, descending=True)[
+                0][int(round(float(num_rois) * self.pecent))]
             drop_index_fg = change_vector.gt(th_fg_value).long()
             ignore_index_fg = 1 - drop_index_fg
             not_01_ignore_index_fg = ignore_index_fg.nonzero()[:, 0]
@@ -163,8 +177,10 @@ def resnet18(pretrained=True, **kwargs):
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
     # model.class_classifier: (512, cls)
     if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet18']), strict=False)
+        model.load_state_dict(model_zoo.load_url(
+            model_urls['resnet18']), strict=False)
     return model
+
 
 def resnet50(pretrained=True, **kwargs):
     """Constructs a ResNet-50 model.
@@ -174,6 +190,6 @@ def resnet50(pretrained=True, **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)
     # model.class_classifier: (512*4, cls)
     if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet50']), strict=False)
+        model.load_state_dict(model_zoo.load_url(
+            model_urls['resnet50']), strict=False)
     return model
-

@@ -9,18 +9,20 @@ import os
 from os.path import *
 
 relabel_dict = {
-            1:9,
-            2:8,
-            3:7,
-            4:6,
-            5:5,
-            6:4,
-            7:3,
-            8:2,
-            9:1,
-        }
+    1: 9,
+    2: 8,
+    3: 7,
+    4: 6,
+    5: 5,
+    6: 4,
+    7: 3,
+    8: 2,
+    9: 1,
+}
 
-DEFAULT_PASS_IMG_PATH = join('/import/home/share/from_Nexperia_April2021/Jan2021','Pass/20210120_WEPA0144514A_11_1_268_3.bmp')
+DEFAULT_PASS_IMG_PATH = join(
+    '/import/home/share/from_Nexperia_April2021/Jan2021', 'Pass/20210120_WEPA0144514A_11_1_268_3.bmp')
+
 
 def get_random_subset(names, labels, percent):
     """
@@ -39,24 +41,40 @@ def get_random_subset(names, labels, percent):
     labels_train = [v for k, v in enumerate(labels) if k not in random_index]
     return name_train, name_val, labels_train, labels_val
 
-def _dataset_info(txt_labels): 
+
+def _dataset_info(txt_labels):
     ''' 
     file_names:List, labels:List 
-    ''' 
-    with open(txt_labels, 'r') as f: 
-        images_list = f.readlines() 
+    '''
+    with open(txt_labels, 'r') as f:
+        images_list = f.readlines()
 
-    file_names = [] 
-    labels = [] 
-    for row in images_list: 
-        row = row.split(' ') 
-        file_names.append(' '.join(row[:-1])) 
-        try: 
-            labels.append(int(row[-1].replace("\n", ""))) 
-        except ValueError as err: 
-            print(' '.join(row[:-1]),row[-1] + 'not found') 
+    file_names = []
+    labels = []
+    for row in images_list:
+        row = row.split(' ')
+        file_names.append(' '.join(row[:-1]))
+        try:
+            labels.append(int(row[-1].replace("\n", "")))
+        except ValueError as err:
+            print(' '.join(row[:-1]), row[-1] + 'not found')
 
+    if 'Jan2021' in txt_labels:
+        # start auto-correction
+        with open('/import/home/share/from_Nexperia_April2021/Jan2021_corrected/FP_Jan_II/Jan_correct.txt') as f:
+            correct_images_list = f.readlines()
+            correct_file_names, correct_labels = [], []
+            for row in correct_images_list:
+                row = row.split(' ')
+                correct_file_names.append(' '.join(row[:-1]))
+                correct_labels.append(int(row[-1].replace("\n", "")))
+        for c_ in correct_file_names:
+            for i in range(len(file_names)):
+                if c_ in file_names[i]:
+                    labels[i] = correct_labels[correct_file_names.index(c_)]
+                    break
     return file_names, labels
+
 
 def get_split_dataset_info(txt_list, val_percentage):
     names, labels = _dataset_info(txt_list)
@@ -104,14 +122,16 @@ class JigsawDataset(data.Dataset):
         for n in range(n_grids):
             tiles[n] = self.get_tile(img, n)
 
-        order = np.random.randint(len(self.permutations) + 1)  # added 1 for class 0: unsorted
+        # added 1 for class 0: unsorted
+        order = np.random.randint(len(self.permutations) + 1)
         if self.bias_whole_image:
             if self.bias_whole_image > random():
                 order = 0
         if order == 0:
             data = tiles
         else:
-            data = [tiles[self.permutations[order - 1][t]] for t in range(n_grids)]
+            data = [tiles[self.permutations[order - 1][t]]
+                    for t in range(n_grids)]
 
         data = torch.stack(data, 0)
         return self.returnFunc(data), int(order), int(self.labels[index])
@@ -172,10 +192,11 @@ class JigsawTestDatasetMultiple(JigsawDataset):
             tile = self._augment_tile(tile)
             tiles[n] = tile
         for order in range(0, len(self.permutations)+1, 3):
-            if order==0:
+            if order == 0:
                 data = tiles
             else:
-                data = [tiles[self.permutations[order-1][t]] for t in range(n_grids)]
+                data = [tiles[self.permutations[order-1][t]]
+                        for t in range(n_grids)]
             data = self.returnFunc(torch.stack(data, 0))
             images.append(data)
             jig_labels.append(order)
@@ -255,9 +276,10 @@ class JigsawNewDataset(data.Dataset):
 
         return all_perm
 
+
 class JigsawTestNewDataset(JigsawNewDataset):
     def __init__(self, *args, **xargs):
-        super().__init__(*args, **xargs) 
+        super().__init__(*args, **xargs)
 
     def __getitem__(self, index):
         framename = self.data_path + '/' + self.names[index]
@@ -269,9 +291,9 @@ class JigsawTestNewDataset(JigsawNewDataset):
 
 # class JigsawTestNewMonthDataset(JigsawNewDataset):
 #     def __init__(self, *args, **xargs):
-#         super().__init__(*args, **xargs) 
+#         super().__init__(*args, **xargs)
 #         self.data_path = '/import/home/share/SourceData'
-    
+
 #     def __getitem__(self, index):
 #         framename = self.data_path + '/' + self.names[index]
 #         img = Image.open(framename).convert('RGB')

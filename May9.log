@@ -1,0 +1,990 @@
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.73
+Accuracies on Inference Result: auc : 94.62
+Accuracies on Inference Result: fpr_980 : 53.23
+Accuracies on Inference Result: fpr_991 : 78.95
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.11
+Accuracies on Inference Result: auc : 94.33
+Accuracies on Inference Result: fpr_980 : 64.77
+Accuracies on Inference Result: fpr_991 : 80.27
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 94.09
+Accuracies on Inference Result: auc : 94.40
+Accuracies on Inference Result: fpr_980 : 62.66
+Accuracies on Inference Result: fpr_991 : 85.02
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 94.20
+Accuracies on Inference Result: auc : 93.92
+Accuracies on Inference Result: fpr_980 : 66.18
+Accuracies on Inference Result: fpr_991 : 83.28
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.73
+Accuracies on Inference Result: auc : 94.98
+Accuracies on Inference Result: fpr_980 : 69.51
+Accuracies on Inference Result: fpr_991 : 78.71
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jul
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.91
+Accuracies on Inference Result: auc : 94.23
+Accuracies on Inference Result: fpr_980 : 60.59
+Accuracies on Inference Result: fpr_991 : 81.47
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 87.00
+Accuracies on Inference Result: auc : 93.27
+Accuracies on Inference Result: fpr_980 : 71.19
+Accuracies on Inference Result: fpr_991 : 86.81
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 88.90
+Accuracies on Inference Result: auc : 93.72
+Accuracies on Inference Result: fpr_980 : 74.87
+Accuracies on Inference Result: fpr_991 : 86.88
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.55
+Accuracies on Inference Result: auc : 92.81
+Accuracies on Inference Result: fpr_980 : 80.37
+Accuracies on Inference Result: fpr_991 : 94.20
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.56
+Accuracies on Inference Result: auc : 94.01
+Accuracies on Inference Result: fpr_980 : 60.47
+Accuracies on Inference Result: fpr_991 : 78.92
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 91.32
+Accuracies on Inference Result: auc : 94.50
+Accuracies on Inference Result: fpr_980 : 64.20
+Accuracies on Inference Result: fpr_991 : 83.06
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Augu
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.85
+Accuracies on Inference Result: auc : 93.83
+Accuracies on Inference Result: fpr_980 : 59.26
+Accuracies on Inference Result: fpr_991 : 78.82
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 88.18
+Accuracies on Inference Result: auc : 92.42
+Accuracies on Inference Result: fpr_980 : 69.52
+Accuracies on Inference Result: fpr_991 : 88.50
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 87.32
+Accuracies on Inference Result: auc : 93.26
+Accuracies on Inference Result: fpr_980 : 76.44
+Accuracies on Inference Result: fpr_991 : 89.29
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 91.84
+Accuracies on Inference Result: auc : 93.22
+Accuracies on Inference Result: fpr_980 : 69.16
+Accuracies on Inference Result: fpr_991 : 88.84
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.42
+Accuracies on Inference Result: auc : 91.53
+Accuracies on Inference Result: fpr_980 : 82.59
+Accuracies on Inference Result: fpr_991 : 92.18
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.12
+Accuracies on Inference Result: auc : 93.49
+Accuracies on Inference Result: fpr_980 : 69.22
+Accuracies on Inference Result: fpr_991 : 84.11
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Sep
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 91.92
+Accuracies on Inference Result: auc : 92.16
+Accuracies on Inference Result: fpr_980 : 72.20
+Accuracies on Inference Result: fpr_991 : 87.66
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 90.27
+Accuracies on Inference Result: auc : 92.18
+Accuracies on Inference Result: fpr_980 : 75.50
+Accuracies on Inference Result: fpr_991 : 89.72
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 90.43
+Accuracies on Inference Result: auc : 91.75
+Accuracies on Inference Result: fpr_980 : 82.92
+Accuracies on Inference Result: fpr_991 : 94.30
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.60
+Accuracies on Inference Result: auc : 92.20
+Accuracies on Inference Result: fpr_980 : 75.16
+Accuracies on Inference Result: fpr_991 : 89.54
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.91
+Accuracies on Inference Result: auc : 92.26
+Accuracies on Inference Result: fpr_980 : 74.50
+Accuracies on Inference Result: fpr_991 : 84.26
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.25
+Accuracies on Inference Result: auc : 92.30
+Accuracies on Inference Result: fpr_980 : 83.80
+Accuracies on Inference Result: fpr_991 : 95.05
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Oct
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.81
+Accuracies on Inference Result: auc : 91.34
+Accuracies on Inference Result: fpr_980 : 83.80
+Accuracies on Inference Result: fpr_991 : 92.97
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 91.56
+Accuracies on Inference Result: auc : 93.19
+Accuracies on Inference Result: fpr_980 : 69.55
+Accuracies on Inference Result: fpr_991 : 84.69
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 91.84
+Accuracies on Inference Result: auc : 93.32
+Accuracies on Inference Result: fpr_980 : 72.99
+Accuracies on Inference Result: fpr_991 : 93.28
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.39
+Accuracies on Inference Result: auc : 93.24
+Accuracies on Inference Result: fpr_980 : 72.88
+Accuracies on Inference Result: fpr_991 : 86.06
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.89
+Accuracies on Inference Result: auc : 93.69
+Accuracies on Inference Result: fpr_980 : 71.19
+Accuracies on Inference Result: fpr_991 : 83.70
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.08
+Accuracies on Inference Result: auc : 94.14
+Accuracies on Inference Result: fpr_980 : 68.50
+Accuracies on Inference Result: fpr_991 : 86.60
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Nov
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.09
+Accuracies on Inference Result: auc : 93.10
+Accuracies on Inference Result: fpr_980 : 68.90
+Accuracies on Inference Result: fpr_991 : 87.60
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.71
+Accuracies on Inference Result: auc : 93.77
+Accuracies on Inference Result: fpr_980 : 65.00
+Accuracies on Inference Result: fpr_991 : 89.11
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.80
+Accuracies on Inference Result: auc : 93.85
+Accuracies on Inference Result: fpr_980 : 72.51
+Accuracies on Inference Result: fpr_991 : 86.52
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.90
+Accuracies on Inference Result: auc : 94.00
+Accuracies on Inference Result: fpr_980 : 75.19
+Accuracies on Inference Result: fpr_991 : 89.02
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 92.91
+Accuracies on Inference Result: auc : 93.60
+Accuracies on Inference Result: fpr_980 : 70.97
+Accuracies on Inference Result: fpr_991 : 87.42
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.88
+Accuracies on Inference Result: auc : 94.35
+Accuracies on Inference Result: fpr_980 : 76.24
+Accuracies on Inference Result: fpr_991 : 88.21
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Dec
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.06
+Accuracies on Inference Result: auc : 93.40
+Accuracies on Inference Result: fpr_980 : 75.01
+Accuracies on Inference Result: fpr_991 : 90.13
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.92
+Accuracies on Inference Result: auc : 93.89
+Accuracies on Inference Result: fpr_980 : 69.83
+Accuracies on Inference Result: fpr_991 : 82.35
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.98
+Accuracies on Inference Result: auc : 93.81
+Accuracies on Inference Result: fpr_980 : 69.47
+Accuracies on Inference Result: fpr_991 : 82.25
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.01
+Accuracies on Inference Result: auc : 93.65
+Accuracies on Inference Result: fpr_980 : 75.86
+Accuracies on Inference Result: fpr_991 : 87.83
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.73
+Accuracies on Inference Result: auc : 92.02
+Accuracies on Inference Result: fpr_980 : 80.48
+Accuracies on Inference Result: fpr_991 : 91.97
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 94.35
+Accuracies on Inference Result: auc : 92.51
+Accuracies on Inference Result: fpr_980 : 85.86
+Accuracies on Inference Result: fpr_991 : 90.38
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Jan2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 93.59
+Accuracies on Inference Result: auc : 92.21
+Accuracies on Inference Result: fpr_980 : 80.15
+Accuracies on Inference Result: fpr_991 : 91.61
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 87.74
+Accuracies on Inference Result: auc : 95.03
+Accuracies on Inference Result: fpr_980 : 62.88
+Accuracies on Inference Result: fpr_991 : 80.95
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 87.26
+Accuracies on Inference Result: auc : 95.04
+Accuracies on Inference Result: fpr_980 : 65.96
+Accuracies on Inference Result: fpr_991 : 82.16
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 84.82
+Accuracies on Inference Result: auc : 95.18
+Accuracies on Inference Result: fpr_980 : 63.91
+Accuracies on Inference Result: fpr_991 : 81.55
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 84.42
+Accuracies on Inference Result: auc : 95.06
+Accuracies on Inference Result: fpr_980 : 64.87
+Accuracies on Inference Result: fpr_991 : 81.65
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 87.15
+Accuracies on Inference Result: auc : 95.61
+Accuracies on Inference Result: fpr_980 : 59.92
+Accuracies on Inference Result: fpr_991 : 79.07
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Feb2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 85.18
+Accuracies on Inference Result: auc : 95.02
+Accuracies on Inference Result: fpr_980 : 62.87
+Accuracies on Inference Result: fpr_991 : 80.24
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 81.40
+Accuracies on Inference Result: auc : 94.06
+Accuracies on Inference Result: fpr_980 : 60.17
+Accuracies on Inference Result: fpr_991 : 78.25
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 80.99
+Accuracies on Inference Result: auc : 94.48
+Accuracies on Inference Result: fpr_980 : 65.86
+Accuracies on Inference Result: fpr_991 : 82.15
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 77.25
+Accuracies on Inference Result: auc : 94.17
+Accuracies on Inference Result: fpr_980 : 61.53
+Accuracies on Inference Result: fpr_991 : 83.57
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 74.42
+Accuracies on Inference Result: auc : 94.42
+Accuracies on Inference Result: fpr_980 : 62.77
+Accuracies on Inference Result: fpr_991 : 80.58
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 79.35
+Accuracies on Inference Result: auc : 94.50
+Accuracies on Inference Result: fpr_980 : 63.64
+Accuracies on Inference Result: fpr_991 : 80.86
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: Mar2021
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 76.03
+Accuracies on Inference Result: auc : 94.33
+Accuracies on Inference Result: fpr_980 : 61.88
+Accuracies on Inference Result: fpr_991 : 78.85
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 79.96
+Accuracies on Inference Result: auc : 97.13
+Accuracies on Inference Result: fpr_980 : 23.35
+Accuracies on Inference Result: fpr_991 : 53.24
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 80.82
+Accuracies on Inference Result: auc : 96.50
+Accuracies on Inference Result: fpr_980 : 23.09
+Accuracies on Inference Result: fpr_991 : 40.57
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 86.65
+Accuracies on Inference Result: auc : 97.27
+Accuracies on Inference Result: fpr_980 : 17.97
+Accuracies on Inference Result: fpr_991 : 32.18
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 85.59
+Accuracies on Inference Result: auc : 97.49
+Accuracies on Inference Result: fpr_980 : 13.84
+Accuracies on Inference Result: fpr_991 : 46.48
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 86.84
+Accuracies on Inference Result: auc : 98.13
+Accuracies on Inference Result: fpr_980 : 11.46
+Accuracies on Inference Result: fpr_991 : 19.13
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_2
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 84.88
+Accuracies on Inference Result: auc : 96.48
+Accuracies on Inference Result: fpr_980 : 12.65
+Accuracies on Inference Result: fpr_991 : 25.52
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.27
+Accuracies on Inference Result: auc : 97.33
+Accuracies on Inference Result: fpr_980 : 18.04
+Accuracies on Inference Result: fpr_991 : 46.64
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.56
+Accuracies on Inference Result: auc : 97.49
+Accuracies on Inference Result: fpr_980 : 20.06
+Accuracies on Inference Result: fpr_991 : 51.98
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_best3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.43
+Accuracies on Inference Result: auc : 97.74
+Accuracies on Inference Result: fpr_980 : 11.73
+Accuracies on Inference Result: fpr_991 : 29.80
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last1_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.05
+Accuracies on Inference Result: auc : 96.94
+Accuracies on Inference Result: fpr_980 : 25.78
+Accuracies on Inference Result: fpr_991 : 54.00
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last2_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.40
+Accuracies on Inference Result: auc : 97.38
+Accuracies on Inference Result: fpr_980 : 17.63
+Accuracies on Inference Result: fpr_991 : 45.42
+Environment:
+	Num of Epochs: 50
+	Batch Size: 128
+	Backbone: resnet50
+	Using RSC: False
+	Using Pretrained: False
+Source domains: 
+Target domain: batch_3
+Current use cuda:2
+=> loading checkpoint './Domain_Generalization/save_models/tgt_Jan2021_src_Nex_trainingset_RSC_True_last3_AUC.pth'
+=> loaded checkpoint
+Accuracies on Inference Result: class_acc : 96.14
+Accuracies on Inference Result: auc : 97.10
+Accuracies on Inference Result: fpr_980 : 20.96
+Accuracies on Inference Result: fpr_991 : 54.81

@@ -6,10 +6,10 @@ from models import resnet
 
 nets_map = {
     # 'caffenet': caffenet.caffenet,
-    #'alexnet': alexnet.alexnet,
+    # 'alexnet': alexnet.alexnet,
     'resnet18': resnet.resnet18,
     'resnet50': resnet.resnet50,
-    #'lenet': mnist.lenet
+    # 'lenet': mnist.lenet
 }
 
 

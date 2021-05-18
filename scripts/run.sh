@@ -1,6 +1,6 @@
 ARCH=resnet50
 SRC=Nex_trainingset
-TGT=Mar2021
+TGT=Jan2021
 CLS_NUM=9
 EPOCH=200
 BATCH_SIZE=32
@@ -25,7 +25,7 @@ python -u /home/hcaoaf/github/RSC/Domain_Generalization/train.py \
        --source ${SRC} \
        --target ${TGT}\
        --network ${ARCH} \
-       --RSC_flag \
        --loss fl \
+       --RSC_flag \
        --save_metric ${SAVE_METRIC} \
        >>${LOG_PATH}/${TGT}_BASED_ON_${SRC}_RSC_${RSC}_epochs${EPOCH}_${ARCH}_Pretrained_${PRETRAINED}_loss_${LOSS}_${SAVE_METRIC}.log
