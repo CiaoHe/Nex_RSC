@@ -129,7 +129,6 @@ class Trainer:
 
         self.source_loader, self.val_loader = data_helper.get_train_dataloader(
             args, patches=model.is_patch_based())
-        # self.target_loader = data_helper.get_val_dataloader(args, patches=model.is_patch_based())
         self.target_loader = data_helper.get_tgt_dataloader(
             self.args, patches=model.is_patch_based())
         self.test_loaders = {"val": self.val_loader,
@@ -371,8 +370,6 @@ def main():
     print("Source domains: {}".format(args.source))
     print("Target domain: {}".format(args.target))
     args.source = args.source.split('-')
-    torch.manual_seed(0)
-    torch.cuda.manual_seed(0)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.cuda.set_device(args.cuda_number)
     print('Current use cuda:%d' % args.cuda_number)
@@ -386,4 +383,6 @@ def main():
 
 if __name__ == "__main__":
     torch.backends.cudnn.benchmark = True
+    torch.manual_seed(0)
+    torch.cuda.manual_seed(0)
     main()
